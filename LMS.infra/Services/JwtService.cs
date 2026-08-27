@@ -40,7 +40,7 @@ public class JwtService : IJwtService
             issuer:   jwtSettings["Issuer"],
             audience: jwtSettings["Audience"],
             claims:   claims,
-            expires:  DateTime.UtcNow.AddHours(8),
+            expires:  DateTime.UtcNow.AddHours(1),
             signingCredentials: new SigningCredentials(key, SecurityAlgorithms.HmacSha256));
 
         return new JwtSecurityTokenHandler().WriteToken(token);
